@@ -9,4 +9,5 @@ test('test', async ({ page }) => {
   await page.getByRole('textbox', { name: 'Password' }).fill('test02938');
   await page.getByRole('button', { name: 'Sign in', exact: true }).click();
   await expect(page.getByRole('alert')).toContainText('Incorrect username or password.');
+  await page.waitForTimeout(5000); // Pause for 5 seconds
 });
