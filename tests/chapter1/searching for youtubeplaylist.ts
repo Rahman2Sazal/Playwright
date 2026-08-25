@@ -1,5 +1,7 @@
 import { test, expect } from '@playwright/test';
 
+
+//recoded steps
 test('test', async ({ page }) => {
   await page.goto('https://www.youtube.com/');
   await page.getByRole('button', { name: 'Reject the use of cookies and' }).click();
