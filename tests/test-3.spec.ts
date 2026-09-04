@@ -4,13 +4,10 @@ test('test', async ({ page }) => {
   await page.goto('https://www.youtube.com/');
   await page.getByRole('button', { name: 'Reject the use of cookies and' }).click();
   await page.getByRole('combobox', { name: 'Search' }).click();
-  await page.getByRole('combobox', { name: 'Search' }).fill('');
+  await page.getByRole('combobox', { name: 'Search' }).fill('Playwright by Testers Talk');
   await page.getByRole('combobox', { name: 'Search' }).press('Enter');
-  
-  await page.goto('https://www.youtube.com/watch?v=2poXBtifpzA&list=PLUeDIlio4THEgPRVJRqZRS8uw8hhVNQCM');
-  // Validate the webpage title
-    await expect(page).toHaveTitle('Playwright by Testers Talk ✅ - YouTube');
 
+  
   await page.getByRole('link', { name: 'View full playlist' }).first().click();
 
   await expect(page.getByRole('link', { name: '#1 Playwright Tutorial Full' })).toBeVisible();
