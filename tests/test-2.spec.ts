@@ -7,4 +7,5 @@ test('test', async ({ page }) => {
   await page.getByRole('combobox', { name: 'Search' }).fill('playwright by testers talk');
   await page.getByRole('combobox', { name: 'Search' }).press('Enter');
   await page.goto('https://www.youtube.com/watch?v=2poXBtifpzA&list=PLUeDIlio4THEgPRVJRqZRS8uw8hhVNQCM');
+  await page.pause();
 });

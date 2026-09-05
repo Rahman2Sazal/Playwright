@@ -18,5 +18,5 @@ test('test', async ({ page }) => {
   await expect(page.getByRole('link', { name: 'Playwright #1 Chapter01' })).toBeVisible();
   await page.getByRole('link', { name: 'Playwright #1 Chapter01' }).click();
 
-  
+  await page.pause();
 });
