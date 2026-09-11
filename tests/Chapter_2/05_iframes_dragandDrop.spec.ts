@@ -6,17 +6,10 @@ test('Drag and Drop in Playwright', async ({ page }) => {
 
     
     const iFrame = page.frameLocator('[class="demo-frame"]');
-
     const dragElement = iFrame.locator('id=draggable');
     const dropElement = iFrame.locator('id=droppable');
 
     await dragElement.dragTo(dropElement);
-
-
-
-
-
-
 
     await page.pause(); // Pause to observe the result
 
