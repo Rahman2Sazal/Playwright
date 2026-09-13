@@ -21,4 +21,6 @@ test ('test', async ({page}) => {
     await page.waitForTimeout(2000);
     await page.screenshot({ path: 'Screenshots/keyboard-functions.png' });
 
+    await page.pause(); // Pause to observe the result
+
     });
