@@ -15,8 +15,16 @@ test ('test', async ({page}) => {
     await searchBox.fill('B1 french podcast playlist');
     await page.getByRole('button', {name: 'Search', exact: true}).click();
    // await searchBox.press('Enter');
+   const podcastlink= page.getByRole('link', {name: /B1 French Podcast/i}).first();
+   await expect(podcastlink).toBeVisible();
+   await podcastlink.click({button: 'right'});
 
-    await expect(page.getByText('B1 French Podcast').first()).toBeVisible();
+   const voiceSearchButton= page.getByRole('button', {name: /voice search/i});
+   await expect(voiceSearchButton).toBeVisible();
+   await voiceSearchButton.hover();
+
+   const voiceToolTip= page.getByText(/Search with your voice/i);
+   await expect(voiceToolTip).toBeVisible();
   
     await page.pause(); // Pause to observe the result
 
